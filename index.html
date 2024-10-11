@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía esencial sobre la nutrición y los diferentes tipos de alimentos para una vida saludable.">
+    <title>Guía Esencial de la Nutrición</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4caf50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .info-section {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guía Esencial de la Nutrición</h1>
+        <p>Aprende sobre los tipos de alimentos y cómo mantener una dieta equilibrada</p>
+    </header>
+
+    <div class="content">
+        <section id="intro">
+            <h2>¿Qué es la nutrición?</h2>
+            <p>La nutrición es el proceso por el cual el cuerpo obtiene los nutrientes necesarios para funcionar correctamente. Una dieta equilibrada es esencial para mantener la salud, el bienestar y prevenir enfermedades.</p>
+        </section>
+
+        <section id="alimentos">
+            <h2>Tipos de Alimentos</h2>
+            <p>Selecciona un grupo de alimentos para aprender más:</p>
+            <select id="foodSelect">
+                <option value="" disabled selected>Elige un grupo de alimentos</option>
+                <option value="carbohidratos">Carbohidratos</option>
+                <option value="proteinas">Proteínas</option>
+                <option value="grasas">Grasas</option>
+                <option value="vitaminas">Vitaminas</option>
+                <option value="minerales">Minerales</option>
+            </select>
+            <button onclick="mostrarInfo()">Ver información</button>
+
+            <div id="carbohidratos" class="info-section">
+                <h3>Carbohidratos</h3>
+                <p>Los carbohidratos son la principal fuente de energía para el cuerpo. Se encuentran en alimentos como el pan, la pasta, el arroz y las patatas.</p>
+            </div>
+            <div id="proteinas" class="info-section">
+                <h3>Proteínas</h3>
+                <p>Las proteínas son esenciales para la reparación y construcción de tejidos en el cuerpo. Fuentes comunes incluyen carne, pescado, huevos y legumbres.</p>
+            </div>
+            <div id="grasas" class="info-section">
+                <h3>Grasas</h3>
+                <p>Las grasas son necesarias para el funcionamiento adecuado del cerebro y otras funciones corporales. Se encuentran en aceites, aguacates, nueces y pescado graso.</p>
+            </div>
+            <div id="vitaminas" class="info-section">
+                <h3>Vitaminas</h3>
+                <p>Las vitaminas ayudan al cuerpo a realizar diversas funciones biológicas. Se encuentran en frutas, verduras y productos lácteos.</p>
+            </div>
+            <div id="minerales" class="info-section">
+                <h3>Minerales</h3>
+                <p>Los minerales, como el calcio y el hierro, son esenciales para la formación de huesos y la producción de energía. Se encuentran en productos lácteos, verduras de hoja verde y carne.</p>
+            </div>
+        </section>
+
+        <section id="consejos">
+            <h2>Consejos Nutricionales</h2>
+            <ul>
+                <li>Mantén un equilibrio entre carbohidratos, proteínas y grasas en cada comida.</li>
+                <li>Incorpora frutas y verduras en tu dieta diaria para asegurar un aporte adecuado de vitaminas y minerales.</li>
+                <li>Bebe suficiente agua a lo largo del día para mantenerte hidratado.</li>
+                <li>Limita el consumo de azúcares y alimentos procesados.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Guía Esencial de la Nutrición. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarInfo() {
+            var seleccion = document.getElementById("foodSelect").value;
+            var secciones = document.getElementsByClassName("info-section");
+
+            // Ocultar todas las secciones
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = "none";
+            }
+
+            // Mostrar la sección seleccionada
+            if (seleccion) {
+                document.getElementById(seleccion).style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
